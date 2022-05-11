@@ -1,4 +1,5 @@
 import React, { useRef, useState } from "react"
+import { Container } from "react-bootstrap"
 import { Form, Button, Card, Alert } from "react-bootstrap"
 import { useAuth } from "../contexts/AuthContext"
 import { Link } from "react-router-dom"
@@ -27,7 +28,9 @@ export default function ForgotPassword() {
   }
 
   return (
-    <>
+    <Container className="d-flex align-items-center justify-content-center"
+      style={{ minHeight: "100vh" }}>
+      <div className="w-100" style={{ maxWidth: "400px" }}>
       <Card>
         <Card.Body>
           <h2 className="text-center mb-4">Password Reset</h2>
@@ -37,7 +40,7 @@ export default function ForgotPassword() {
             <Form.Group id="email">
               <Form.Label>Email</Form.Label>
               <Form.Control type="email" ref={emailRef} required />
-            </Form.Group>
+            </Form.Group><br/>
             <Button disabled={loading} className="w-100" type="submit">
               Reset Password
             </Button>
@@ -47,9 +50,10 @@ export default function ForgotPassword() {
           </div>
         </Card.Body>
       </Card>
-      <div className="w-100 text-center mt-2">
+      <div className="w-100 text-center mt-2" style={{color:"snow"}}>
         Need an account? <Link to="/signup">Sign Up</Link>
       </div>
-    </>
+      </div>
+    </Container>
   )
 }

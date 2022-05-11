@@ -1,4 +1,5 @@
 import React, { useRef, useState } from "react"
+import { Container } from "react-bootstrap"
 import { Form, Button, Card, Alert } from "react-bootstrap"
 import { useAuth } from "../contexts/AuthContext"
 import { Link, useNavigate } from "react-router-dom"
@@ -42,10 +43,13 @@ export default function UpdateProfile() {
   }
 
   return (
-    <>
+    <Container className="d-flex align-items-center justify-content-center"
+      style={{ minHeight: "100vh" }}>
+      <div className="w-100" style={{ maxWidth: "400px" }}>
       <Card>
         <Card.Body>
           <h2 className="text-center mb-4">Update Profile</h2>
+          <p style={{color:"red"}}>Please update E-mail or Password one at a time</p>
           {error && <Alert variant="danger">{error}</Alert>}
           <Form onSubmit={handleSubmit}>
             <Form.Group id="email">
@@ -71,7 +75,7 @@ export default function UpdateProfile() {
                 type="password"
                 ref={passwordConfirmRef}
                 placeholder="Leave blank to keep the same"
-              />
+              /><br/>
             </Form.Group>
             <Button disabled={loading} className="w-100" type="submit">
               Update
@@ -80,8 +84,9 @@ export default function UpdateProfile() {
         </Card.Body>
       </Card>
       <div className="w-100 text-center mt-2">
-        <Link to="/">Cancel</Link>
+        <Link to="/" style={{color:"snow"}}>Cancel</Link>
       </div>
-    </>
+      </div>
+    </Container>
   )
 }
