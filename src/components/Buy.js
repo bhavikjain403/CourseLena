@@ -18,8 +18,8 @@ class Buy extends Component {
         const courses = this.props.items.map((item) => {
             return (
               <div key={item.id} className="col-6 col-md-3 mb-5 mt-5">
-                <Card style={{"borderRadius":"20px"}}>
-                  <CardTitle style={{"text-align": "center", "fontSize": "30px", "color":"snow", "borderTopLeftRadius":"20px", "borderTopRightRadius":"20px", "background":"navy"}}>{item.name}</CardTitle>
+                <Card style={{"borderRadius":"20px", "height":"350px"}}>
+                  <CardTitle style={{"text-align": "center", "fontSize": "30px", "color":"snow", "borderTopLeftRadius":"20px", "borderTopRightRadius":"20px", "background":"#1f2833"}}>{item.name}</CardTitle>
                   <HoverVideoPlayer videoSrc={item.videoURL} muted={false} restartOnPaused overlayTransitionDuration={150} pausedOverlay={<CardImg src={item.image} alt={item.name} style={{
                         width: '100%',
                         height: '100%',
@@ -31,7 +31,7 @@ class Buy extends Component {
                         <button disabled="disabled" style={{"border": "none","border-radius": "10px", "background":"black", "color":"snow", "height":"37px"}}><b>Rs. {item.price}</b></button>
                       </div>
                       <div className='col-auto col-md-7'>
-                        <a href='#myCart'><button type='button' id = "addToCart" onClick={() => {this.onItemSelect(item);}} style={{"border-radius": "5px", "background":"red", "color":"snow", "height":"37px" }}>Add to cart</button></a>
+                        <a href='#myCart'><button type='button' id = "addToCart" onClick={() => {this.onItemSelect(item);}} style={{"border-radius": "5px", "background":"red", "color":"snow", "height":"37px" }}>Buy Now</button></a>
                       </div>
                     </div>
                   </CardText>

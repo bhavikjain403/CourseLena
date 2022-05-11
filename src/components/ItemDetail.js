@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import { Link } from 'react-router-dom';
 import { Card, CardImg, CardBody, CardText, CardTitle, CardFooter, CardHeader } from 'reactstrap';
 
 class ItemDetail extends Component {
@@ -80,7 +81,7 @@ class ItemDetail extends Component {
                         <input className='col-3 col-md-3' type="number" placeholder="Year"></input>
                     </div>
                     <div className='row' style={{"paddingTop":"12%", "paddingBottom":"9%"}}>
-                        <a href='/'><button className='col-5 offset-3' id = "buy" style={{"backgroundColor":"red","color":"snow","borderRadius":"5px"}} onClick={function(){document.querySelector("#buy").style.backgroundColor="green"; alert("Thank you for the payment");document.removeChild(document.querySelector("div"));}}>Proceed to pay Rs. {item.price}</button></a>
+                        <Link to={"/"}><button className='col-5 offset-3' id = "buy" style={{"backgroundColor":"red","color":"snow","borderRadius":"5px"}} onClick={function(){document.querySelector("#buy").style.backgroundColor="green"; alert("Thank you for the payment");document.removeChild(document.querySelector("div"));}}>Proceed to pay Rs. {item.price}</button></Link>
                     </div>
                     </div>
                 </Card>
@@ -104,7 +105,7 @@ class ItemDetail extends Component {
         return (
             <div id="myCart" style={{paddingBottom:"10%"}}>
                 <div className='row'>
-                <h1 style={{"textAlign":"center","paddingTop":"2%", "paddingBottom":"2%", "margin":"0", "background":"ivory"}}>Buy Now</h1>
+                <h1 style={{"textAlign":"center","paddingTop":"2%", "paddingBottom":"2%", "margin":"0", "background":"#1f2833","color":"snow"}}>Buy Now</h1>
                 </div>
                 <div className='row'>
                     <div className='col-12 col-md-6 g-md-0'>

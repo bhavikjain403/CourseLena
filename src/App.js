@@ -19,7 +19,7 @@ function App() {
     </div>
     <Navbar variant="dark">
       <Container>
-      <Navbar.Brand>Navbar</Navbar.Brand>
+      <Navbar.Brand>Welcome To CourseLena</Navbar.Brand>
       <Nav className="me-auto">
         <Nav.Link href="/">Home</Nav.Link>
         <Nav.Link href="/dashboard">Dashboard</Nav.Link>

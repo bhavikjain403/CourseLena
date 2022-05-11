@@ -1,0 +1,44 @@
+@keyframes spinning {
+    from{
+        transform: translatez(-100px) rotatey(0deg) rotatex(0deg);
+    }to{
+        transform: translateZ(-100px) rotatey(360deg) rotatex(360deg);
+    }
+    
+}
+
+.cube{
+    height:200px;
+    width: 200px;
+    position: relative;
+    margin:100px;
+    transform-style: preserve-3d;
+    perspective: 100000px;
+    transform: rotateX(0deg) rotateY(0deg);
+    animation: spinning 4s infinite;
+}
+
+.face{
+    height: 100%;
+    width:100%;
+    position: absolute;
+    top:20%;
+    left:20%;
+    transition: all 1s;
+}
+
+.two{
+    transform: rotateY(90deg) translateZ(-100px) translateX(-100px);
+}
+.three{
+    transform: rotatex(-90deg) translateY(-100px) translateZ(-100px);
+}
+.four{
+    transform: rotateY(-90deg) translateZ(-100px) translatex(100px);
+}
+.five{
+    transform: rotateX(90deg) translatey(100px) translatez(-100px);
+}
+.six{
+    transform: rotatez(90deg) translateZ(+200px) translateY(0px);
+}
